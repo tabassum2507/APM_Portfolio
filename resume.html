@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tabassum Khanum - Product Lead Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+        background: #ffffff;
+      }
+
+      .resume-page {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 42px 22px 80px;
+      }
+
+      .resume-toolbar {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .resume-sheet {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: clamp(24px, 5vw, 48px);
+      }
+
+      .resume-top {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 18px;
+        padding-bottom: 22px;
+        border-bottom: 2px solid var(--ink);
+      }
+
+      .resume-top h1 {
+        margin-bottom: 10px;
+        font-size: clamp(2.4rem, 8vw, 4.5rem);
+      }
+
+      .resume-contact {
+        display: grid;
+        gap: 6px;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .resume-block {
+        padding: 24px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .resume-block:last-child {
+        border-bottom: 0;
+      }
+
+      .resume-block h2 {
+        margin-bottom: 14px;
+        font-size: 1rem;
+        text-transform: uppercase;
+      }
+
+      .resume-item {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .resume-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .resume-item strong {
+        display: block;
+        font-size: 1.05rem;
+      }
+
+      .resume-item span {
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .resume-item ul {
+        margin: 10px 0 0;
+        padding-left: 20px;
+        color: var(--muted);
+      }
+
+      @media print {
+        .resume-toolbar,
+        .site-header {
+          display: none;
+        }
+
+        .resume-page {
+          padding: 0;
+        }
+
+        .resume-sheet {
+          border: 0;
+          padding: 0;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .resume-top,
+        .resume-item {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="resume-page">
+      <div class="resume-toolbar">
+        <a class="button secondary" href="index.html">Back to portfolio</a>
+        <button class="button primary" type="button" onclick="window.print()">Print resume</button>
+      </div>
+
+      <article class="resume-sheet">
+        <header class="resume-top">
+          <div>
+            <p class="eyebrow">Product Lead at Webspiders Group</p>
+            <h1>Tabassum Khanum</h1>
+            <p>
+              Product Lead with experience in user research, prioritization, analytics,
+              and cross-functional execution.
+            </p>
+          </div>
+          <div class="resume-contact">
+            <a href="mailto:your.email@example.com">your.email@example.com</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="index.html#work">Portfolio</a>
+          </div>
+        </header>
+
+        <section class="resume-block">
+          <h2>Product Projects</h2>
+          <div class="resume-item">
+            <div>
+              <strong>Onboarding Improvement Case Study</strong>
+              <span>Finance app concept</span>
+              <ul>
+                <li>Mapped activation drop-off and proposed a checklist-led setup experience.</li>
+                <li>Defined success, guardrail metrics, experiment design, and launch risks.</li>
+              </ul>
+            </div>
+            <span>2026</span>
+          </div>
+          <div class="resume-item">
+            <div>
+              <strong>Retention Strategy Case Study</strong>
+              <span>Edtech subscription concept</span>
+              <ul>
+                <li>Segmented learners and identified week-two churn drivers.</li>
+                <li>Recommended a goal-based habit loop with measurable retention outcomes.</li>
+              </ul>
+            </div>
+            <span>2026</span>
+          </div>
+        </section>
+
+        <section class="resume-block">
+          <h2>Experience</h2>
+          <div class="resume-item">
+            <div>
+              <strong>Product Lead</strong>
+              <span>Webspiders Group</span>
+              <ul>
+                <li>Lead product discovery, prioritization, and execution across product initiatives.</li>
+                <li>Translate customer and business needs into clear product direction and delivery plans.</li>
+              </ul>
+            </div>
+            <span>Current</span>
+          </div>
+        </section>
+
+        <section class="resume-block">
+          <h2>Skills</h2>
+          <p>
+            Product discovery, user interviews, PRDs, roadmap prioritization, funnels,
+            cohort analysis, SQL basics, wireframing, stakeholder communication.
+          </p>
+        </section>
+
+        <section class="resume-block">
+          <h2>Education</h2>
+          <div class="resume-item">
+            <div>
+              <strong>Your Degree</strong>
+              <span>Your college or university</span>
+            </div>
+            <span>Graduation year</span>
+          </div>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
