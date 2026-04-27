@@ -10,6 +10,12 @@ const priorityScore = document.querySelector("[data-priority-score]");
 const priorityMessage = document.querySelector("[data-priority-message]");
 const priorityMeter = document.querySelector("[data-priority-meter]");
 const roadmapCards = document.querySelectorAll("[data-roadmap-card]");
+const aiGenerateButton = document.querySelector("[data-ai-generate]");
+const aiProblem = document.querySelector("[data-ai-problem]");
+const aiCapability = document.querySelector("[data-ai-capability]");
+const aiValue = document.querySelector("[data-ai-value]");
+const aiMetric = document.querySelector("[data-ai-metric]");
+const aiConsoleLines = document.querySelectorAll(".console-line");
 
 menuButton?.addEventListener("click", () => {
   const isOpen = siteNav.classList.toggle("open");
@@ -138,3 +144,53 @@ ideaTabs.forEach((tab) => {
 });
 
 updatePriorityStudio();
+
+const aiIdeas = [
+  {
+    problem: "Users struggle to understand long support conversations.",
+    capability: "Summarization plus sentiment detection",
+    value: "Faster context, clearer next action, less manual reading.",
+    metric: "Time to resolution"
+  },
+  {
+    problem: "Teams miss patterns hidden across scattered customer feedback.",
+    capability: "Topic clustering and insight extraction",
+    value: "Product teams can spot recurring pain points before roadmap planning.",
+    metric: "Insight-to-roadmap conversion"
+  },
+  {
+    problem: "New users feel lost when a product has too many setup choices.",
+    capability: "Personalized onboarding recommendations",
+    value: "Users get the right first actions based on goal, role, and context.",
+    metric: "Activation rate"
+  },
+  {
+    problem: "Operations teams repeat low-risk decisions every day.",
+    capability: "Workflow automation with human approval",
+    value: "Routine work is faster while sensitive decisions stay reviewed.",
+    metric: "Manual handling time"
+  }
+];
+
+let aiIdeaIndex = 0;
+
+function renderAiIdea(index) {
+  const idea = aiIdeas[index % aiIdeas.length];
+  if (!aiProblem || !aiCapability || !aiValue || !aiMetric) {
+    return;
+  }
+
+  aiProblem.textContent = idea.problem;
+  aiCapability.textContent = idea.capability;
+  aiValue.textContent = idea.value;
+  aiMetric.textContent = idea.metric;
+
+  aiConsoleLines.forEach((line, lineIndex) => {
+    line.classList.toggle("active", lineIndex === index % aiConsoleLines.length);
+  });
+}
+
+aiGenerateButton?.addEventListener("click", () => {
+  aiIdeaIndex += 1;
+  renderAiIdea(aiIdeaIndex);
+});
