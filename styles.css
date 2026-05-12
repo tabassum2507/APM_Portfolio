@@ -775,6 +775,10 @@ h3 {
   object-position: 50% center;
 }
 
+.ill-nua img {
+  object-position: center center;
+}
+
 .case-meta {
   display: flex;
   justify-content: space-between;
