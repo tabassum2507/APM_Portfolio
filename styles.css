@@ -190,6 +190,35 @@ h3 {
   font-size: clamp(1.05rem, 2vw, 1.22rem);
 }
 
+.hero-about {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  max-width: 660px;
+  margin: 22px 0 0;
+}
+
+.hero-avatar {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--berry), var(--rose));
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(216, 87, 115, 0.22);
+}
+
+.hero-bio {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.8vw, 1.12rem);
+  line-height: 1.65;
+  margin: 0;
+}
+
 .hero-actions,
 .contact-actions {
   display: flex;
@@ -812,8 +841,23 @@ h3 {
   font-weight: 800;
 }
 
-.case-card a {
+.outcome-pill {
+  display: inline-flex;
+  align-items: center;
   margin-top: auto;
+  margin-bottom: 14px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: rgba(116, 217, 214, 0.12);
+  border: 1px solid rgba(116, 217, 214, 0.45);
+  color: #1a9c94;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.case-card a {
+  margin-top: 0;
 }
 
 .ai-section {
@@ -1243,6 +1287,36 @@ h3 {
     var(--ink);
   color: var(--white);
   box-shadow: var(--shadow);
+}
+
+.avail-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 18px;
+  padding: 5px 11px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 0.01em;
+}
+
+.avail-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6);
+  animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55); }
+  50%       { box-shadow: 0 0 0 5px rgba(74, 222, 128, 0); }
 }
 
 .contact-section h2 {
