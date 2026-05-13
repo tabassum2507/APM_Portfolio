@@ -166,6 +166,14 @@ h3 {
   font-weight: 700;
 }
 
+h1,
+h2 {
+  background: linear-gradient(120deg, #c4a0ff 0%, #8a7dff 55%, #7ab8f5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 h1 {
   max-width: 760px;
   margin-bottom: 20px;
