@@ -814,6 +814,15 @@ h3 {
   object-position: 50% center;
 }
 
+.ill-ai {
+  background: linear-gradient(135deg, #1a1040 0%, #0d1a2e 100%);
+}
+
+.ill-ai img {
+  opacity: 0.4;
+  mix-blend-mode: screen;
+}
+
 .ill-cvent img {
   object-position: 50% center;
 }

@@ -68,7 +68,7 @@
           </div>
           <dl class="hero-stats">
             <div>
-              <dt>3</dt>
+              <dt>4</dt>
               <dd>case studies</dd>
             </div>
             <div>
@@ -174,12 +174,37 @@
 
         <div class="filter-row" aria-label="Filter case studies">
           <button class="filter-chip active" type="button" data-filter="all">All</button>
+          <button class="filter-chip" type="button" data-filter="ai">AI Product</button>
           <button class="filter-chip" type="button" data-filter="strategy">Strategy</button>
           <button class="filter-chip" type="button" data-filter="teardown">Teardown</button>
           <button class="filter-chip" type="button" data-filter="femtech">Femtech</button>
         </div>
 
         <div class="case-grid">
+          <article class="case-card reveal" id="pm-docforge" data-category="ai">
+            <div class="case-illustration ill-ai">
+              <img src="assets/apm-illustration.png" alt="">
+            </div>
+            <div class="case-meta">
+              <span>AI Product</span>
+              <span>PRD · V1.0</span>
+            </div>
+            <h3>PM DocForge — AI-powered PM document generator</h3>
+            <p>
+              Designed and shipped an AI web app that transforms a brief product description
+              into a full suite of PM documents — PRD, Design Doc, Technical Spec, GTM Brief,
+              User Stories, and Release Notes — in under 60 seconds, no signup required.
+            </p>
+            <ul>
+              <li>Identified the core problem: writing a single PRD takes 2–6 hours; existing tools require manual editing or enterprise subscriptions.</li>
+              <li>Defined a frictionless two-step flow (Describe → Choose Docs) powered by Claude AI with instant DOCX/PDF exports.</li>
+              <li>Set 90-day success metrics: &gt;65% activation rate, 500+ docs/week, &lt;90s time-to-download, NPS &gt; 45.</li>
+              <li>Scoped V1 in/out boundaries — no accounts, no collaboration, no integrations — to ship fast and validate core value.</li>
+            </ul>
+            <p class="outcome-pill">Target: 500+ docs generated per week with NPS &gt; 45 by end of Phase 3</p>
+            <a href="assets/docs/PM-DocForge.pdf" target="_blank" rel="noreferrer">Open PRD case study</a>
+          </article>
+
           <article class="case-card reveal" id="whatsapp-swot" data-category="strategy">
             <div class="case-illustration ill-strategy">
               <img src="assets/whatsapp-real-cover.webp?v=real-photo" alt="Phone showing the WhatsApp app listing">
