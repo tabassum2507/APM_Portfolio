@@ -1483,6 +1483,31 @@ h3 {
   font-weight: 500;
 }
 
+.exp-company a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.exp-company a:hover {
+  color: var(--ink);
+}
+
+.hero-bio a,
+.contact-section h2 a,
+.brand-copy a {
+  color: inherit;
+  -webkit-text-fill-color: var(--ai);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hero-bio a:hover,
+.contact-section h2 a:hover,
+.brand-copy a:hover {
+  -webkit-text-fill-color: var(--ink);
+}
+
 .exp-meta {
   display: flex;
   flex-direction: column;
