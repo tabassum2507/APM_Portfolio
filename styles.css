@@ -994,11 +994,15 @@ h3 {
 
 /* Live AI builds */
 .ai-live-projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
   margin-top: 40px;
 }
 
 .ai-live-projects > .eyebrow {
-  margin-bottom: 16px;
+  grid-column: 1 / -1;
+  margin-bottom: 0;
 }
 
 .ai-live-card {
@@ -1011,7 +1015,6 @@ h3 {
   box-shadow: 0 18px 44px rgba(72, 67, 132, 0.12);
   padding: 28px 32px;
   transition: transform 180ms ease, box-shadow 180ms ease;
-  max-width: 640px;
 }
 
 .ai-live-card:hover {
@@ -1497,6 +1500,7 @@ h3 {
   .illustration-layout,
   .ai-layout,
   .ai-card-grid,
+  .ai-live-projects,
   .studio-shell,
   .roadmap-preview,
   .process-list {
