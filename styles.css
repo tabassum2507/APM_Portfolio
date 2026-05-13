@@ -1412,6 +1412,98 @@ h3 {
   transform: translateY(0);
 }
 
+/* ── Certifications ─────────────────────────────────── */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.cert-card:hover {
+  border-color: rgba(138, 125, 255, 0.4);
+  transform: translateY(-3px);
+}
+
+.cert-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(138,125,255,0.2), rgba(116,217,214,0.15));
+  border: 1px solid rgba(138,125,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ai);
+  font-size: 1rem;
+}
+
+.cert-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.cert-body h3 {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: none;
+  -webkit-text-fill-color: var(--ink);
+  margin: 0 0 4px;
+  line-height: 1.4;
+}
+
+.cert-issuer {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ai);
+}
+
+.cert-date {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.cert-verify {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.cert-verify:hover {
+  color: var(--ai);
+  border-color: rgba(138,125,255,0.4);
+}
+
+@media (max-width: 980px) {
+  .certs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ── Experience timeline ─────────────────────────────── */
 .experience-list {
   position: relative;
