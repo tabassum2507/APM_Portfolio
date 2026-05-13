@@ -1530,6 +1530,26 @@ h3 {
   line-height: 1.55;
 }
 
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.exp-tags span {
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(116, 217, 214, 0.08);
+  border: 1px solid rgba(116, 217, 214, 0.2);
+  color: var(--cyan);
+}
+
 @media (max-width: 720px) {
   .exp-header {
     flex-direction: column;
