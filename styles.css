@@ -1437,16 +1437,34 @@ h3 {
 
 .cert-icon {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 10px;
-  background: linear-gradient(135deg, rgba(138,125,255,0.2), rgba(116,217,214,0.15));
-  border: 1px solid rgba(138,125,255,0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--ai);
-  font-size: 1rem;
+  overflow: hidden;
+}
+
+.cert-icon--ibm {
+  background: #ffffff;
+  padding: 8px;
+}
+
+.cert-icon--ibm img {
+  width: 100%;
+  height: auto;
+}
+
+.cert-icon--fcc {
+  background: #0a0a23;
+  padding: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.cert-icon--fcc img {
+  width: 100%;
+  height: auto;
 }
 
 .cert-body {
