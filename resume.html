@@ -3,321 +3,399 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tabassum Khanum - Product Lead Resume</title>
+    <title>Tabassum Khanum — Resume</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    >
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <style>
-      /* override dark theme variables for white resume page */
-      :root {
-        --ink: #1a1826;
-        --muted: #4a4560;
-        --line: #ddd8e8;
-        --paper: #ffffff;
-        --surface: #f6f4fb;
-      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
       body {
-        background: #ffffff;
-        color: #1a1826;
+        background: #fff;
+        color: #000;
+        font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+        font-size: 11pt;
+        line-height: 1.42;
       }
 
-      .resume-page {
-        max-width: 980px;
-        margin: 0 auto;
-        padding: 42px 22px 80px;
-      }
+      a { color: #1a0dab; text-decoration: none; }
+      a:hover { text-decoration: underline; }
 
+      /* toolbar */
       .resume-toolbar {
         display: flex;
         justify-content: space-between;
-        gap: 16px;
-        margin-bottom: 28px;
+        gap: 12px;
+        max-width: 780px;
+        margin: 20px auto 16px;
+        padding: 0 20px;
+        font-family: system-ui, sans-serif;
+        font-size: 0.83rem;
+      }
+      .resume-toolbar a,
+      .resume-toolbar button {
+        padding: 5px 12px;
+        border: 1px solid #555;
+        border-radius: 4px;
+        cursor: pointer;
+        background: #fff;
+        font-size: 0.83rem;
+        font-family: inherit;
+        color: #000;
+        text-decoration: none;
+      }
+      .resume-toolbar button { background: #111; color: #fff; border-color: #111; }
+
+      /* page */
+      .resume-page {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 0 20px 60px;
       }
 
-      .resume-sheet {
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        padding: clamp(24px, 5vw, 48px);
-      }
-
-      .resume-top {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 18px;
-        padding-bottom: 22px;
-        border-bottom: 2px solid var(--ink);
-      }
-
-      .resume-top h1 {
+      /* ── HEADER ── */
+      .r-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
         margin-bottom: 10px;
-        font-size: clamp(2.4rem, 8vw, 4.5rem);
       }
 
-      .resume-contact {
-        display: grid;
+      .r-header-left { flex: 1; }
+
+      .r-name {
+        font-size: 22pt;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 3px;
+        color: #000;
+      }
+
+      .r-header-links {
+        font-size: 10pt;
+        line-height: 1.65;
+      }
+
+      .r-header-right {
+        text-align: right;
+        font-size: 10pt;
+        line-height: 1.65;
+        flex-shrink: 0;
+        color: #000;
+      }
+
+      /* ── SECTION ── */
+      .r-section { margin-top: 9px; }
+
+      .r-section-title {
+        font-size: 9.5pt;
+        font-variant: small-caps;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        border-bottom: 1px solid #000;
+        padding-bottom: 1px;
+        margin-bottom: 5px;
+        color: #000;
+      }
+
+      /* ── ENTRY LIST ── */
+      .r-entries {
+        list-style: none;
+        padding: 0;
+      }
+
+      .r-entry {
+        position: relative;
+        padding-left: 13px;
+        margin-bottom: 7px;
+      }
+      .r-entry:last-child { margin-bottom: 0; }
+      .r-entry::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      /* two-col row: org/role left, loc/date right */
+      .r-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
         gap: 6px;
-        color: var(--muted);
-        font-weight: 700;
       }
 
-      .resume-block {
-        padding: 24px 0;
-        border-bottom: 1px solid var(--line);
+      .r-org  { font-weight: 700; font-size: 11pt; }
+      .r-role { font-style: italic; font-size: 10.5pt; }
+      .r-right {
+        flex-shrink: 0;
+        font-size: 10.5pt;
+        white-space: nowrap;
+      }
+      .r-right-italic {
+        flex-shrink: 0;
+        font-size: 10.5pt;
+        font-style: italic;
+        white-space: nowrap;
       }
 
-      .resume-block:last-child {
-        border-bottom: 0;
+      /* condensed single-line entries (Crio.Do, Ekosight) */
+      .r-entry-condensed .r-row { font-size: 10.5pt; }
+
+      /* sub-bullets ◦ */
+      .r-subbullets {
+        list-style: none;
+        padding-left: 10px;
+        margin-top: 2px;
+      }
+      .r-subbullets li {
+        position: relative;
+        padding-left: 13px;
+        margin-bottom: 2px;
+        font-size: 10.5pt;
+        line-height: 1.42;
+      }
+      .r-subbullets li::before {
+        content: "◦";
+        position: absolute;
+        left: 0;
+        top: 0;
       }
 
-      .resume-block h2 {
-        margin-bottom: 14px;
-        font-size: 1rem;
-        text-transform: uppercase;
+      /* ── PROJECTS / SKILLS list ── */
+      .r-list {
+        list-style: none;
+        padding: 0;
+      }
+      .r-list li {
+        position: relative;
+        padding-left: 13px;
+        margin-bottom: 4px;
+        font-size: 10.5pt;
+        line-height: 1.45;
+      }
+      .r-list li:last-child { margin-bottom: 0; }
+      .r-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
       }
 
-      .resume-item {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 18px;
-        margin-bottom: 18px;
+      /* summary */
+      .r-summary {
+        font-size: 10.5pt;
+        line-height: 1.5;
       }
 
-      .resume-item:last-child {
-        margin-bottom: 0;
-      }
-
-      .resume-item strong {
-        display: block;
-        font-size: 1.05rem;
-      }
-
-      .resume-item span {
-        color: var(--muted);
-        font-weight: 700;
-      }
-
-      .resume-item ul {
-        margin: 10px 0 0;
-        padding-left: 20px;
-        color: var(--muted);
-      }
-
+      /* print */
       @media print {
-        .resume-toolbar,
-        .site-header {
-          display: none;
-        }
-
-        .resume-page {
-          padding: 0;
-        }
-
-        .resume-sheet {
-          border: 0;
-          padding: 0;
-        }
+        .resume-toolbar { display: none; }
+        .resume-page { padding: 0; }
+        body { font-size: 10.5pt; }
+        @page { margin: 0.6in 0.75in; }
       }
 
-      @media (max-width: 720px) {
-        .resume-top,
-        .resume-item {
-          grid-template-columns: 1fr;
-        }
+      @media (max-width: 580px) {
+        .r-header { flex-wrap: wrap; }
+        .r-header-right { text-align: left; }
+        .r-row { flex-wrap: wrap; }
+        .r-right, .r-right-italic { white-space: normal; }
       }
     </style>
   </head>
   <body>
+
+    <div class="resume-toolbar">
+      <a href="index.html">&#8592; Back to portfolio</a>
+      <button type="button" id="dl-btn" onclick="downloadPDF()">Download PDF</button>
+    </div>
+
     <main class="resume-page">
-      <div class="resume-toolbar">
-        <a class="button secondary" href="index.html">Back to portfolio</a>
-        <button class="button primary" type="button" onclick="window.print()">Print resume</button>
-      </div>
 
-      <article class="resume-sheet">
-        <header class="resume-top">
-          <div>
-            <p class="eyebrow">Product Lead at Webspiders Group</p>
-            <h1>Tabassum Khanum</h1>
-            <p>
-              Product Lead with experience in user research, prioritization, analytics,
-              and cross-functional execution.
-            </p>
+      <!-- HEADER -->
+      <header class="r-header">
+        <div class="r-header-left">
+          <p class="r-name">Tabassum Khanum</p>
+          <div class="r-header-links">
+            <a href="https://tabassumkhanum.vercel.app" target="_blank" rel="noreferrer">tabassumkhanum.vercel.app</a><br>
+            <a href="https://www.linkedin.com/in/tabassum-khanum/" target="_blank" rel="noreferrer">linkedin.com/in/tabassum-khanum</a>
           </div>
-          <div class="resume-contact">
-            <a href="mailto:tabassumk7484@gmail.com">tabassumk7484@gmail.com</a>
-            <a href="https://www.linkedin.com/in/tabassum-khanum/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="index.html#work">Portfolio</a>
-          </div>
-        </header>
+        </div>
+        <div class="r-header-right">
+          Email: <a href="mailto:tabassumk7484@gmail.com">tabassumk7484@gmail.com</a><br>
+          Mobile: +91 97739 07484<br>
+          Location: Kolkata, India
+        </div>
+      </header>
 
-        <section class="resume-block">
-          <h2>Product Projects</h2>
+      <!-- SUMMARY -->
+      <section class="r-section">
+        <h2 class="r-section-title">Summary</h2>
+        <p class="r-summary">
+          Working with products for 3+ years — shipping AI-native products, B2B SaaS, and mobile apps. Owned E2M, a multi-tenant event
+          platform serving 10,000+ attendees at CII EXCON; defined Voice AI agents handling 500+ customer calls for Hindalco and Gajraj
+          Hyundai; delivered a separate manufacturing app line for Gainwell and Hidromas. Built and launched my own AI product (PM
+          DocForge) solo. Looking to work on more SaaS and AI products where iteration speed and customer obsession compound.
+        </p>
+      </section>
 
-          <div class="resume-item">
-            <div>
-              <strong>PM DocForge — AI-Powered PM Document Generator</strong>
-              <span>Live product · pm-doc-forge.vercel.app</span>
-              <ul>
-                <li>Designed and shipped an AI web app that generates a full PM doc suite — PRD, Design Doc, Tech Spec, GTM Brief, User Stories, Release Notes — in under 60 seconds.</li>
-                <li>Defined frictionless two-step flow, success metrics (65% activation, 500+ docs/week), and V1 scope boundaries.</li>
-              </ul>
-            </div>
-            <span>2026</span>
-          </div>
+      <!-- EDUCATION -->
+      <section class="r-section">
+        <h2 class="r-section-title">Education</h2>
+        <ul class="r-entries">
 
-          <div class="resume-item">
-            <div>
-              <strong>WhatsApp SWOT Analysis &amp; Smart Priority Inbox</strong>
-              <span>Strategy · PDF case study</span>
-              <ul>
-                <li>Identified message overload, limited search, and chaotic groups as core usability gaps.</li>
-                <li>Proposed AI chat summarisation, smart priority inbox, and context-based notifications with measurable metrics.</li>
-              </ul>
+          <li class="r-entry">
+            <div class="r-row">
+              <span class="r-org">SRM University</span>
+              <span class="r-right">Sonepat, Haryana</span>
             </div>
-            <span>2025</span>
-          </div>
+            <div class="r-row">
+              <span class="r-role">Bachelor of Technology in Electronics &amp; Communication Engineering</span>
+              <span class="r-right-italic">2015 – 2019</span>
+            </div>
+          </li>
 
-          <div class="resume-item">
-            <div>
-              <strong>Cvent Product Teardown — Enterprise Event SaaS</strong>
-              <span>Teardown · PDF case study</span>
-              <ul>
-                <li>Mapped end-to-end event manager journey; identified friction in publishing, module complexity, and pricing opacity.</li>
-                <li>Prioritised fixes including Smart Publish, event-type onboarding, and CventIQ AI opportunities.</li>
-              </ul>
+          <li class="r-entry">
+            <div class="r-row">
+              <span class="r-org">Kendriya Vidyalaya No. 1, Bathinda Cantt</span>
+              <span class="r-right">Bathinda, India</span>
             </div>
-            <span>2025</span>
-          </div>
+            <div class="r-row">
+              <span class="r-role">Class XII — Science (Physics, Chemistry, Mathematics)</span>
+              <span class="r-right-italic">2015</span>
+            </div>
+          </li>
 
-          <div class="resume-item">
-            <div>
-              <strong>NUA Onboarding &amp; Subscription Conversion Strategy</strong>
-              <span>Femtech · PDF case study</span>
-              <ul>
-                <li>Found friction in 10+ question quiz, empty tracker state, and buried subscription CTA.</li>
-                <li>Recommended progressive onboarding, engagement-based rewards, and earlier subscription surfacing — target +12% conversion.</li>
-              </ul>
-            </div>
-            <span>2025</span>
-          </div>
-        </section>
+        </ul>
+      </section>
 
-        <section class="resume-block">
-          <h2>Experience</h2>
+      <!-- EXPERIENCE -->
+      <section class="r-section">
+        <h2 class="r-section-title">Experience</h2>
+        <ul class="r-entries">
 
-          <div class="resume-item">
-            <div>
-              <strong>Product Lead</strong>
-              <span>Web Spiders Group · Full-time · Kolkata, India</span>
-              <ul>
-                <li>Owned end-to-end delivery of event apps, CMS platforms, and websites for CII EXCON, North Star Group, Internet Retailing, and PCOA.</li>
-                <li>Defined and shipped Voice First AI agents for Hindalco and Gajraj Hyundai — from agent design to client-readiness handoff.</li>
-                <li>Delivered manufacturing industry apps for Gainwell and Hidromas across discovery, design, development, testing, and release.</li>
-                <li>Led Android and iOS app delivery across multiple client accounts end to end.</li>
-              </ul>
+          <li class="r-entry">
+            <div class="r-row">
+              <span class="r-org">Web Spiders Group</span>
+              <span class="r-right">Kolkata, India</span>
             </div>
-            <span>Jul 2024 – Present</span>
-          </div>
+            <div class="r-row">
+              <span class="r-role">Product Lead</span>
+              <span class="r-right-italic">Jul 2024 – Present</span>
+            </div>
+            <ul class="r-subbullets">
+              <li><strong>Voice AI Agents:</strong> Defined and shipped Voice-first AI agents for Hindalco and Gajraj Hyundai handling 500+ customer calls — owning agent specs, conversation flows, and client-readiness handoff.</li>
+              <li><strong>E2M Event Platform:</strong> Owned product delivery for E2M, a multi-tenant event SaaS platform — scaled rollout across enterprise clients including CII EXCON (10,000+ attendees), North Star Group, Internet Retailing, and PCOA.</li>
+              <li><strong>Manufacturing Apps:</strong> Delivered a separate B2B product line for Gainwell and Hidromas — owned discovery to release, cutting field-data capture friction for plant operators.</li>
+              <li><strong>Cross-Product Leadership:</strong> Led 5+ engineers and designers across both product lines, shipping 10+ products and prioritized 2–3 parallel releases without slipping deadlines.</li>
+            </ul>
+          </li>
 
-          <div class="resume-item">
-            <div>
-              <strong>Frontend Developer</strong>
-              <span>The Mainstage Productions · Full-time · Remote</span>
-              <ul>
-                <li>Owned end-to-end delivery of Pocketxtra — an Android event management app — from Figma design to Play Store release.</li>
-                <li>Led stakeholder meetings to gather requirements, align on priorities, and communicate delivery progress.</li>
-              </ul>
+          <li class="r-entry">
+            <div class="r-row">
+              <span class="r-org">The Mainstage Productions</span>
+              <span class="r-right">Remote</span>
             </div>
-            <span>Apr 2023 – Jul 2024</span>
-          </div>
+            <div class="r-row">
+              <span class="r-role">Frontend Developer</span>
+              <span class="r-right-italic">Apr 2023 – Jul 2024</span>
+            </div>
+            <ul class="r-subbullets">
+              <li><strong>Pocketxtra:</strong> Shipped Pocketxtra, an Android event management app, from Figma to Play Store in under 3 months as the sole product-side owner — reached 500+ downloads.</li>
+              <li><strong>Engagement Tracking:</strong> Instrumented downloads and session tracking to validate the V1 feature set against actual user behavior, then ran weekly stakeholder reviews to translate findings into a prioritized backlog.</li>
+            </ul>
+          </li>
 
-          <div class="resume-item">
-            <div>
-              <strong>Full Stack Engineer</strong>
-              <span>Crio.Do · Apprenticeship</span>
-              <ul>
-                <li>Built full-stack features using Node.js, HTML5, and web technologies on an ed-tech platform.</li>
-              </ul>
+          <li class="r-entry r-entry-condensed">
+            <div class="r-row">
+              <span><strong>Crio.Do</strong> · Full Stack Engineer (Apprenticeship)</span>
+              <span class="r-right">Remote · Jan 2022 – May 2023</span>
             </div>
-            <span>Jan 2022 – May 2023</span>
-          </div>
+          </li>
 
-          <div class="resume-item">
-            <div>
-              <strong>Full Stack Developer</strong>
-              <span>Ekosight · Internship</span>
-              <ul>
-                <li>Contributed to frontend and backend development for an early-stage product startup.</li>
-              </ul>
+          <li class="r-entry r-entry-condensed">
+            <div class="r-row">
+              <span><strong>Ekosight</strong> · Full Stack Developer (Internship)</span>
+              <span class="r-right">Delhi, India · Oct 2022 – Mar 2023</span>
             </div>
-            <span>Oct 2022 – Mar 2023</span>
-          </div>
-        </section>
+          </li>
 
-        <section class="resume-block">
-          <h2>Certifications</h2>
-          <div class="resume-item">
-            <div>
-              <strong>Product Management: Foundations &amp; Stakeholder Collaboration</strong>
-              <span>IBM · Credential ID PJY96PV1R6ZF</span>
+          <li class="r-entry">
+            <div class="r-row">
+              <span class="r-org">Thinkgenix</span>
+              <span class="r-right">Noida, Delhi NCR</span>
             </div>
-            <span>May 2026</span>
-          </div>
-          <div class="resume-item">
-            <div>
-              <strong>Product Management: An Introduction</strong>
-              <span>IBM · Credential ID HGQ3IPC3JTHU</span>
+            <div class="r-row">
+              <span class="r-role">Lead Embedded Developer</span>
+              <span class="r-right-italic">Jul 2019 – Dec 2021</span>
             </div>
-            <span>Apr 2026</span>
-          </div>
-          <div class="resume-item">
-            <div>
-              <strong>Generative AI: Introduction and Applications</strong>
-              <span>IBM · Credential ID 16IZLQL2U142</span>
-            </div>
-            <span>Apr 2026</span>
-          </div>
-          <div class="resume-item">
-            <div>
-              <strong>JavaScript Algorithms and Data Structures</strong>
-              <span>freeCodeCamp</span>
-            </div>
-            <span>Aug 2022</span>
-          </div>
-        </section>
+            <ul class="r-subbullets">
+              <li><strong>IoT Product Delivery:</strong> Led a 3-person embedded team shipping an IoT product end-to-end — owned firmware design, hardware-software integration, and release across Embedded C, STM32/ESP32 microcontrollers, and Python tooling.</li>
+            </ul>
+          </li>
 
-        <section class="resume-block">
-          <h2>Skills</h2>
-          <p>
-            Product discovery · User interviews · PRDs &amp; specs · Roadmap prioritisation · Stakeholder management ·
-            Funnel &amp; cohort analysis · AI agent design · Voice AI · Android &amp; iOS delivery ·
-            React Native · Node.js · Figma · SQL basics · Wireframing
-          </p>
-        </section>
+        </ul>
+      </section>
 
-        <section class="resume-block">
-          <h2>Education</h2>
-          <div class="resume-item">
-            <div>
-              <strong>B.Tech — Electronics &amp; Communication Engineering</strong>
-              <span>SRM University</span>
-            </div>
-            <span>2019 – 2023</span>
-          </div>
-          <div class="resume-item">
-            <div>
-              <strong>Class XII — Science</strong>
-              <span>Kendriya Vidyalaya No. 1, Bathinda Cantt</span>
-            </div>
-            <span>2019</span>
-          </div>
-        </section>
-      </article>
+      <!-- PROJECTS -->
+      <section class="r-section">
+        <h2 class="r-section-title">Projects</h2>
+        <ul class="r-list">
+          <li><strong>PM DocForge:</strong> AI web app generating a full PM doc suite — PRD, Design Doc, Tech Spec, GTM Brief, User Stories, Release Notes — in under 60 seconds. Scoped a two-step flow, defined V1 metrics (65% activation, 500+ docs/week target), and shipped solo. <a href="https://pm-doc-forge.vercel.app" target="_blank" rel="noreferrer">pm-doc-forge.vercel.app</a></li>
+          <li><strong>WhatsApp SWOT &amp; Smart Priority Inbox:</strong> Diagnosed three core usability gaps — message overload, weak search, chaotic groups — and proposed AI chat summarization, smart priority inbox, and context-aware notifications with measurable adoption metrics.</li>
+          <li><strong>Cvent Product Teardown:</strong> Mapped the end-to-end event-manager journey, pinpointed friction in publishing and pricing opacity, and prioritized three fixes including a CventIQ AI opportunity using a reach &times; impact &times; confidence model.</li>
+          <li><strong>NUA Onboarding Strategy:</strong> Identified drop-off in a 10-question quiz, empty tracker state, and buried subscription CTA. Recommended progressive onboarding, engagement-based rewards, and earlier paywall surfacing — modelled +12% conversion lift.</li>
+        </ul>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="r-section">
+        <h2 class="r-section-title">Skills</h2>
+        <ul class="r-list">
+          <li><strong>Product:</strong> Product strategy, Customer discovery, User research, JTBD, 0&#x2192;1, MVP scoping, Roadmap prioritization, Experimentation, OKRs, GTM</li>
+          <li><strong>AI &amp; Data:</strong> AI agent design, Voice AI, Conversational UX, LLM prompt engineering, Activation &amp; retention, Funnel analysis</li>
+          <li><strong>Tools:</strong> Jira, Notion, ClickUp, Monday CRM, Figma, Google Analytics, SQL, React Native, Node.js, Agile delivery</li>
+        </ul>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section class="r-section">
+        <h2 class="r-section-title">Certifications</h2>
+        <ul class="r-list">
+          <li><strong>IBM:</strong> PM — Foundations &amp; Stakeholder Collaboration (<em>May 2026</em>); PM — Introduction (<em>Apr 2026</em>); Generative AI — Introduction &amp; Applications (<em>Apr 2026</em>) &nbsp;&middot;&nbsp; <strong>freeCodeCamp:</strong> JavaScript Algorithms &amp; Data Structures (<em>Aug 2022</em>)</li>
+        </ul>
+      </section>
+
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      function downloadPDF() {
+        var btn = document.getElementById('dl-btn');
+        btn.textContent = 'Generating…';
+        btn.disabled = true;
+
+        var el = document.querySelector('.resume-page');
+        var marginMm = 12;
+        // Set page height = content height so everything fits on one page
+        var pageH = (el.scrollHeight / 96 * 25.4) + marginMm * 2;
+
+        html2pdf()
+          .set({
+            margin:      [marginMm, 15, marginMm, 15],
+            filename:    'Tabassum_Khanum_Resume.pdf',
+            image:       { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2, useCORS: true, logging: false },
+            jsPDF:       { unit: 'mm', format: [215.9, pageH], orientation: 'portrait' }
+          })
+          .from(el)
+          .save()
+          .then(function () {
+            btn.textContent = 'Download PDF';
+            btn.disabled = false;
+          });
+      }
+    </script>
   </body>
 </html>
