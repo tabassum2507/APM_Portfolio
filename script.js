@@ -51,7 +51,7 @@ filterButtons.forEach((button) => {
     button.classList.add("active");
 
     caseCards.forEach((card) => {
-      const matches = filter === "all" || card.getAttribute("data-category") === filter;
+      const matches = filter === "all" || card.getAttribute("data-category").split(" ").includes(filter);
       card.classList.toggle("hidden", !matches);
     });
   });
