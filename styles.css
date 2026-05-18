@@ -212,7 +212,7 @@ h3 {
   align-items: center;
   gap: 14px;
   max-width: 620px;
-  margin: 20px 0 0;
+  margin: 12px 0 0;
 }
 
 .hero-avatar {
@@ -279,9 +279,9 @@ h3 {
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  gap: 10px;
   max-width: 620px;
-  margin: 34px 0 0;
+  margin: 20px 0 0;
 }
 
 .hero-stats div {
