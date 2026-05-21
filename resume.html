@@ -409,7 +409,7 @@
             margin:      [marginMm, 15, marginMm, 15],
             filename:    'Tabassum_Khanum_Resume.pdf',
             image:       { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true, logging: false },
+            html2canvas: { scale: 2, useCORS: true, logging: false, windowWidth: 800, scrollX: 0, scrollY: 0 },
             jsPDF:       { unit: 'mm', format: [215.9, pageH], orientation: 'portrait' }
           })
           .from(el)
