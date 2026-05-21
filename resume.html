@@ -391,23 +391,32 @@
 
         var el = document.querySelector('.resume-page');
         var marginMm = 12;
-        var desktopW = 900;
-        var pageH = (el.scrollHeight / 96 * 25.4) + marginMm * 2;
+        var desktopW = 800;
 
-        html2pdf()
-          .set({
-            margin:      [marginMm, 15, marginMm, 15],
-            filename:    'Tabassum_Khanum_Resume.pdf',
-            image:       { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true, logging: false, windowWidth: desktopW },
-            jsPDF:       { unit: 'mm', format: [215.9, pageH], orientation: 'portrait' }
-          })
-          .from(el)
-          .save()
-          .then(function () {
-            btn.textContent = 'Download PDF';
-            btn.disabled = false;
-          });
+        // Clone at desktop width so height + layout are both consistent
+        var clone = el.cloneNode(true);
+        clone.style.cssText = 'position:fixed;top:0;left:-9999px;width:' + desktopW + 'px;visibility:hidden;z-index:-1;';
+        document.body.appendChild(clone);
+
+        setTimeout(function () {
+          var pageH = (clone.scrollHeight / 96 * 25.4) + marginMm * 2;
+
+          html2pdf()
+            .set({
+              margin:      [marginMm, 15, marginMm, 15],
+              filename:    'Tabassum_Khanum_Resume.pdf',
+              image:       { type: 'jpeg', quality: 0.98 },
+              html2canvas: { scale: 2, useCORS: true, logging: false, windowWidth: desktopW },
+              jsPDF:       { unit: 'mm', format: [215.9, pageH], orientation: 'portrait' }
+            })
+            .from(clone)
+            .save()
+            .then(function () {
+              document.body.removeChild(clone);
+              btn.textContent = 'Download PDF';
+              btn.disabled = false;
+            });
+        }, 120);
       }
     </script>
   </body>
