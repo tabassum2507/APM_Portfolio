@@ -391,7 +391,7 @@
 
         var el = document.querySelector('.resume-page');
         var marginMm = 12;
-        // Set page height = content height so everything fits on one page
+        var desktopW = 900;
         var pageH = (el.scrollHeight / 96 * 25.4) + marginMm * 2;
 
         html2pdf()
@@ -399,7 +399,7 @@
             margin:      [marginMm, 15, marginMm, 15],
             filename:    'Tabassum_Khanum_Resume.pdf',
             image:       { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true, logging: false },
+            html2canvas: { scale: 2, useCORS: true, logging: false, windowWidth: desktopW },
             jsPDF:       { unit: 'mm', format: [215.9, pageH], orientation: 'portrait' }
           })
           .from(el)
