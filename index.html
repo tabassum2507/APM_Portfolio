@@ -9,7 +9,7 @@
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="https://tabassumkhanum.vercel.app/">
     <meta property="og:title"       content="Tabassum Khanum — Product Manager Portfolio">
-    <meta property="og:description" content="APM portfolio with 3 case studies, AI product work, and live builds">
+    <meta property="og:description" content="APM portfolio with 4 case studies, AI product work, and live builds">
 
     <title>Tabassum Khanum - Product Manager Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -83,7 +83,7 @@
               <dd>products delivered</dd>
             </div>
             <div>
-              <dt>2</dt>
+              <dt>3</dt>
               <dd>live AI products built solo</dd>
             </div>
           </dl>
@@ -210,6 +210,56 @@
             <a href="assets/docs/PolicyPilot_PRD.pdf" target="_blank" rel="noreferrer">Open PRD case study</a>
           </article>
 
+          <article class="case-card reveal" id="askdrai-casestudy" data-category="ai tool">
+            <div class="case-illustration ill-ai">
+              <img src="assets/askDr.jpg" alt="askDr.ai — RAG-powered health assistant interface">
+            </div>
+            <div class="case-meta">
+              <span>AI Product</span>
+              <span>Case Study · Live Build</span>
+            </div>
+            <h3>askDr.ai — RAG-powered health information assistant</h3>
+            <p>
+              Identified why generic AI chatbots fail at health queries — hallucinations, no citations,
+              no safety guardrails — then designed and shipped a grounded health assistant using
+              Retrieval-Augmented Generation, verified medical sources, and a safety-first architecture.
+              Built solo in 4 days at $0 on free tiers.
+            </p>
+            <ul>
+              <li>Chose RAG over a plain LLM to make every answer source-traceable: responses cite the specific openFDA drug label or MedlinePlus guideline they came from, making hallucination structurally constrained.</li>
+              <li>Designed safety-first architecture: emergency queries (chest pain, self-harm, overdose) bypass RAG entirely and return crisis guidance before any AI processing begins.</li>
+              <li>Instrumented a full Mixpanel funnel (Page View → Category → Message → Response); 28.57% drop-off at landing drove the decision to add suggested starter questions and a clearer CTA.</li>
+              <li>Built and ran a 12-test automated eval suite — initial 7/12 score exposed missing safety patterns; fixed before launch and shipped at 12/12 across retrieval quality, grounding, safety, and hallucination resistance.</li>
+            </ul>
+            <p class="outcome-pill">12/12 eval suite · Safety-first RAG · Shipped in 4 days · $0 infra cost</p>
+            <a href="assets/docs/askDr.ai_Case_Studyv1.pdf" target="_blank" rel="noreferrer">Open case study</a>
+            <a href="https://ask-dr-ai.vercel.app/" target="_blank" rel="noreferrer" style="margin-left:1rem; font-size:0.85em; opacity:0.75;">Live app ↗</a>
+          </article>
+
+          <article class="case-card reveal" id="askdrai-prd" data-category="ai strategy">
+            <div class="case-illustration ill-ai">
+              <img src="assets/prd_askdr.jpg" alt="askDr.ai PRD — Product Requirements Document">
+            </div>
+            <div class="case-meta">
+              <span>AI Product</span>
+              <span>PRD · v1.0</span>
+            </div>
+            <h3>askDr.ai — Product Requirements Document</h3>
+            <p>
+              Full PRD for a RAG-powered health information assistant — from problem statement and
+              user personas through P0/P1 requirements, safety &amp; compliance rules, success
+              metrics, data architecture, 4-phase release plan, and risk register.
+            </p>
+            <ul>
+              <li>Defined three user pain points (hallucinating AI, information overload, no safety net) and two primary personas — the Informed Patient and the Caregiver — with explicit anti-personas to keep scope tight.</li>
+              <li>Specified P0 requirements enforcing RAG grounding, a pre-RAG emergency screen, no-diagnosis policy, and mandatory citations on every response as non-negotiable trust constraints.</li>
+              <li>Set five success metrics with targets: grounding rate &gt;70%, safety pass rate 100%, engagement &gt;3 messages/session, funnel conversion &gt;30%, eval score 12/12.</li>
+              <li>Documented a 4-phase release plan (Medicine RAG → All Categories → Vision + Streaming → Analytics + Eval) with clear ship criteria per phase and a risk register covering critical, high, and medium risks.</li>
+            </ul>
+            <p class="outcome-pill">Shipped · All P0 requirements delivered · 12/12 eval · Live at ask-dr-ai.vercel.app</p>
+            <a href="assets/docs/askDr.ai___PRDv1.pdf" target="_blank" rel="noreferrer">Open PRD</a>
+          </article>
+
           <article class="case-card reveal" id="whatsapp-swot" data-category="strategy">
             <div class="case-illustration ill-strategy">
               <img src="assets/whatsapp-real-cover.webp?v=real-photo" alt="Phone showing the WhatsApp app listing">
@@ -315,6 +365,26 @@
           <h2>Products I've shipped and put online.</h2>
         </div>
         <div class="ai-live-projects reveal">
+          <a
+            class="ai-live-card"
+            href="https://ask-dr-ai.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="askDr.ai — live project"
+          >
+            <div class="ai-live-meta">
+              <span class="ai-live-tag">Live</span>
+              <span class="ai-live-tech">AI · Health tech · RAG</span>
+            </div>
+            <h3>askDr.ai</h3>
+            <p>
+              RAG-powered health assistant grounded in openFDA drug labels and MedlinePlus
+              guidelines. Every answer cites its source. Emergency queries trigger a safety
+              screen before any AI processing. Medicine image recognition included. Built in
+              4 days at $0.
+            </p>
+            <span class="text-link">View live project →</span>
+          </a>
           <a
             class="ai-live-card"
             href="https://return-ready-eight.vercel.app/"
